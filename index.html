@@ -11,9 +11,16 @@
   <body>
     <h1>Get started with GPU Compute on the Web</h1>
     <h2>Sample - Matrix multiplication</h2>
-    <p>Instructions: Check out DevTools JavaScript console.</p>
-    <a href="https://developers.google.com/web/updates/2019/08/get-started-with-gpu-compute-on-the-web">Source</a>
-    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
-    <script src="https://button.glitch.me/button.js"></script>
+    <p><div id="output"><font color="blue">calculating</font></div>
+    <input type="button" id="hello" value="Run(16,16)" size="1">
+    <input type="button" id="hello2" value="Run(8,16)" size="1">
+    <input type="button" id="hello3" value="Run(16,8)" size="1">
+    <script type="module">
+      import {run} from './script.js'
+
+      document.querySelector('#hello').addEventListener('click', ()=>{run(512,512,512,16,16,50)})
+      document.querySelector('#hello2').addEventListener('click', ()=>{run(512,512,512,8,16,50)})
+      document.querySelector('#hello3').addEventListener('click', ()=>{run(512,512,512,16,8,50)})
+    </script>
   </body>
 </html>
